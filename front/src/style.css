@@ -1,0 +1,185 @@
+:root {
+  --navy: #13213f;
+  --slate: #4a6290;
+  --gold: #8a6a12;
+  --yellow: #f2d45c;
+  --paper: #f4f6fb;
+  --line: #d6dcea;
+  --grid-fine: rgba(74, 98, 144, 0.08);
+  --grid-bold: rgba(74, 98, 144, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--navy);
+  font-family: "Archivo", system-ui, sans-serif;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid-bold) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-bold) 1px, transparent 1px),
+    linear-gradient(var(--grid-fine) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-fine) 1px, transparent 1px);
+  background-size: 128px 128px, 128px 128px, 16px 16px, 16px 16px;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(36px, 6vw, 52px);
+  font-weight: 800;
+  font-stretch: 125%;
+  letter-spacing: -0.01em;
+}
+
+.tabs {
+  display: flex;
+  gap: 12px;
+}
+
+.tab {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--navy);
+  background: transparent;
+  border: 1px solid var(--slate);
+  padding: 12px 26px;
+  cursor: pointer;
+}
+
+.tab.is-active {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  font-weight: 700;
+}
+
+.board {
+  width: 100%;
+  border-collapse: collapse;
+  border-bottom: 3px solid var(--yellow);
+}
+
+.board th {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--slate);
+  text-align: left;
+  padding: 0 12px 12px;
+  border-bottom: 1px solid var(--slate);
+}
+
+.board td {
+  padding: 20px 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 16px;
+}
+
+.board tr:last-child td {
+  border-bottom: none;
+}
+
+.col-niveau,
+.col-xp {
+  text-align: right !important;
+}
+
+.col-rang {
+  width: 76px;
+}
+
+.col-equipe {
+  width: 30%;
+}
+
+td.col-rang {
+  font-size: 22px;
+  font-weight: 500;
+  font-stretch: 62%;
+  color: var(--slate);
+}
+
+tr.is-top td.col-rang {
+  color: var(--gold);
+}
+
+td.col-joueur {
+  font-weight: 600;
+}
+
+td.col-equipe.is-empty {
+  color: var(--slate);
+}
+
+td.col-xp {
+  font-weight: 700;
+}
+
+.status {
+  padding: 24px 12px;
+  color: var(--slate);
+}
+
+.status.is-error {
+  color: #a3261b;
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+  color: var(--slate);
+  font-size: 14px;
+}
+
+.pager-btn {
+  font: inherit;
+  color: var(--navy);
+  background: transparent;
+  border: 1px solid var(--slate);
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.pager-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.mode {
+  margin-top: 32px;
+  font-size: 12px;
+  color: var(--slate);
+  opacity: 0.7;
+}
+
+@media (max-width: 640px) {
+  .col-equipe {
+    display: none;
+  }
+  .board td,
+  .board th {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
