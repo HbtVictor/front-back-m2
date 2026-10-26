@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hub · Classement</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <h1 class="title">Classement</h1>
+        <div class="tabs" role="tablist" aria-label="Période du classement">
+          <button class="tab" role="tab" data-periode="saison">Saison</button>
+          <button class="tab" role="tab" data-periode="aujourd_hui">Aujourd'hui</button>
+        </div>
+      </header>
+
+      <table class="board">
+        <thead>
+          <tr>
+            <th class="col-rang">Rang</th>
+            <th class="col-joueur">Joueur</th>
+            <th class="col-equipe">Équipe</th>
+            <th class="col-niveau">Niveau</th>
+            <th class="col-xp">XP</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+
+      <p id="status" class="status" hidden></p>
+
+      <nav id="pager" class="pager" hidden>
+        <button id="prev" class="pager-btn">← Précédent</button>
+        <span id="pager-info"></span>
+        <button id="next" class="pager-btn">Suivant →</button>
+      </nav>
+
+      <p id="mode" class="mode"></p>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
